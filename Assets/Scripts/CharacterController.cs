@@ -6,6 +6,8 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     public Animator animator;
+
+    public ParticleSystem m_particleSystem;
     public bool Talk = false;
     // Start is called before the first frame update
     void Start()
@@ -17,5 +19,9 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         animator.SetBool("talk", Talk);
+    }
+
+    public void EmitLove(){
+        m_particleSystem.Play();
     }
 }
