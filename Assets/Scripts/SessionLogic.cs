@@ -13,8 +13,8 @@ namespace GGJ2020
             Duck
         }
 
-        public static const string[] MALE_NAMES = { "Raipe", "Pertsa", "George", "Vladimir", "Tauski", "Harold" };
-        public static const string[] FEMALE_NAMES = { "Raija", "Tuktuk", "Johku", "Pam", "Tatjana" };
+        public static string[] MALE_NAMES = { "Raipe", "Pertsa", "George", "Vladimir", "Tauski", "Harold" };
+        public static string[] FEMALE_NAMES = { "Raija", "Tuktuk", "Johku", "Pam", "Tatjana" };
 
         public class SessionDetail
         {
@@ -31,8 +31,8 @@ namespace GGJ2020
                 roundCount = Random.Range(5, 8);
                 currentIndex = 0;
                 correctAnswerIndex = new List<int>();
-                type1 = Random.Range(0, 3);
-                type2 = Random.Range(0, 3);
+                type1 = (PersonType)Random.Range(0, 3);
+                type2 = (PersonType)Random.Range(0, 3);
                 name1 = type1 == PersonType.Male ? MALE_NAMES[Random.Range(0, MALE_NAMES.Length)] : type1 == PersonType.Female ? FEMALE_NAMES[Random.Range(0, FEMALE_NAMES.Length)] : "Duck";
                 name2 = type2 == PersonType.Male ? MALE_NAMES[Random.Range(0, MALE_NAMES.Length)] : type2 == PersonType.Female ? FEMALE_NAMES[Random.Range(0, FEMALE_NAMES.Length)] : "Duck";
                 for (int i = 0; i < roundCount; ++i)
@@ -66,7 +66,7 @@ namespace GGJ2020
         public static SessionDetail GetSessionDetails() {
             return instance.internal_GetSessionDetails();
         }
-        
+
         private SessionDetail internal_GetSessionDetails() {
             if (sessionEnded || sessionDetails == null) {
                 internal_InitSession();
@@ -82,12 +82,12 @@ namespace GGJ2020
 
         public static bool HandleSelection(int selection)
         {
-            return instance.internal_HandleSelection();
+            return instance.internal_HandleSelection(selection);
         }
 
         private bool internal_HandleSelection(int selection) {
-            bool correct = sessionDetails.correctAnswerIndex[i++] == selection; 
-            sessionEnded = i >= sessionDetails.correctAnswerIndex.Count;
+            bool correct = sessionDetails.correctAnswerIndex[sessionDetails.currentIndex++] == selection; 
+            sessionEnded = sessionDetails.currentIndex >= sessionDetails.correctAnswerIndex.Count;
             return correct;
         }
     }
