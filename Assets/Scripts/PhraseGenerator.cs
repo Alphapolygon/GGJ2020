@@ -34,7 +34,8 @@ namespace GGJ2020
             if (lastGeneratedPhrases == null)
                 lastGeneratedPhrases = new Dictionary<string, string>();
             lastGeneratedPhrases.Clear();
-            lastGeneratedPhrases.Add("Doctor", "How does that make <emph>you</emph> feel?");
+            lastGeneratedPhrases.Add("Doctor", "How does that make <emph>you</emph> feel? Who wants to continue?");
+            lastGeneratedPhrases.Add("DoctorStart", "Hello, let's start. Who wants to go first?");
             var details = SessionLogic.GetSessionDetails();
             List<string> tempVerbs = new List<string>();
             tempVerbs.AddRange(verbs);
@@ -42,13 +43,15 @@ namespace GGJ2020
             {
                 string line = "";
                 if (i > 0)
-                    line = string.Format(feelingStrings[Random.Range(0, feelingStrings.Length)], emotions[Random.Range(0, emotions.Length)]);
-                string verb = verbs[Random.Range(0, verbs.Length)];
-                string accusationM = line + string.Format("He {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verb);
-                string accusationF = line + string.Format("She {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verb);
+                    line = string.Format(feelingStrings[Random.Range(0, feelingStrings.Length)], emotions[Random.Range(0, emotions.Length)]) + " ";
+                string accusationM = line + string.Format("He {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verbs[Random.Range(0, verbs.Length)]);
+                string accusationF = line + string.Format("She {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verbs[Random.Range(0, verbs.Length)]);
                 lastGeneratedPhrases.Add("lineM" + i, accusationM);
                 lastGeneratedPhrases.Add("lineF" + i, accusationF);
                 lastGeneratedPhrases.Add("lineD" + i, "Honk honk, hunk. <emph>Honk</emph>! Honk?");
+            }
+            foreach (var line in lastGeneratedPhrases) {
+                Debug.Log("Generated: " + line.Key + " -> " + line.Value);
             }
         }
 
