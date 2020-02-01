@@ -89,13 +89,14 @@ public class WindowsVoice : MonoBehaviour
     //<voice required='Gender=male'>
     public void test()
     {
-        PhraseGenerator.generatePhrases();
-        theVoice.speak("<pitch absmiddle='0'> <rate absspeed ='-5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.InitialFemale));
-        theVoice.speak("<pitch absmiddle='-10'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Doctor));
-        theVoice.speak("<pitch absmiddle='10'> <rate absspeed ='5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Disagree));
-        theVoice.speak("<pitch absmiddle='10'> <rate absspeed ='5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.InitialMale));
-        theVoice.speak("<pitch absmiddle='-10'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Doctor));
-        theVoice.speak("<pitch absmiddle='0'> <rate absspeed ='-5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Agree));
+        //theVoice.speak("<pitch absmiddle='10'> <rate absspeed ='5'>Honk hunk. noot noot, psuh ungh!<emph>Honk</emph>");
+        // PhraseGenerator.generatePhrases();
+        // theVoice.speak("<pitch absmiddle='0'> <rate absspeed ='-5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.InitialFemale));
+        // theVoice.speak("<pitch absmiddle='-10'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Doctor));
+        // theVoice.speak("<pitch absmiddle='10'> <rate absspeed ='5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Disagree));
+        // theVoice.speak("<pitch absmiddle='10'> <rate absspeed ='5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.InitialMale));
+        // theVoice.speak("<pitch absmiddle='-10'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Doctor));
+        // theVoice.speak("<pitch absmiddle='0'> <rate absspeed ='-5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Agree));
     }
 
     public void speak(string msg, float delay = 0f)
