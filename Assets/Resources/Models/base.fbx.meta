@@ -30,6 +30,18 @@ ModelImporter:
   - first:
       74: 6641085478485924818
     second: ugly_crys
+  - first:
+      74: -5059006814000262888
+    second: blink
+  - first:
+      74: 6058012797723043285
+    second: eyes_open
+  - first:
+      74: 1720936854327583921
+    second: talk
+  - first:
+      74: 7267368290916357857
+    second: listen
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -93,8 +105,68 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: akka:body
+        weight: 0
+      - path: akka:body/akka:f_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:f_tits
+        weight: 0
+      - path: akka:body/akka:hair_parent
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:female_hair_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_beard_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_hair_01
+        weight: 0
+      - path: akka:body/akka:hip
+        weight: 1
+      - path: akka:body/akka:hip/akka:l_up_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg/akka:l_shoe
+        weight: 1
+      - path: akka:body/akka:hip/akka:r_up_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg/akka:r_shoe
+        weight: 1
+      - path: akka:body/akka:hip/akka:skirt
+        weight: 1
+      - path: akka:body/akka:l_eye
+        weight: 0
+      - path: akka:body/akka:l_up_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm/akka:l_hand
+        weight: 0
+      - path: akka:body/akka:m_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown1
+        weight: 0
+      - path: akka:body/akka:m_tits
+        weight: 0
+      - path: akka:body/akka:mouth
+        weight: 0
+      - path: akka:body/akka:pearls
+        weight: 0
+      - path: akka:body/akka:r_eye
+        weight: 0
+      - path: akka:body/akka:r_up_hand
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
+        weight: 0
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -122,8 +194,68 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: akka:body
+        weight: 0
+      - path: akka:body/akka:f_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:f_tits
+        weight: 0
+      - path: akka:body/akka:hair_parent
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:female_hair_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_beard_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_hair_01
+        weight: 0
+      - path: akka:body/akka:hip
+        weight: 1
+      - path: akka:body/akka:hip/akka:l_up_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg/akka:l_shoe
+        weight: 1
+      - path: akka:body/akka:hip/akka:r_up_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg
+        weight: 1
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg/akka:r_shoe
+        weight: 1
+      - path: akka:body/akka:hip/akka:skirt
+        weight: 1
+      - path: akka:body/akka:l_eye
+        weight: 0
+      - path: akka:body/akka:l_up_arm
+        weight: 1
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm
+        weight: 1
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm/akka:l_hand
+        weight: 1
+      - path: akka:body/akka:m_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown1
+        weight: 0
+      - path: akka:body/akka:m_tits
+        weight: 0
+      - path: akka:body/akka:mouth
+        weight: 0
+      - path: akka:body/akka:pearls
+        weight: 0
+      - path: akka:body/akka:r_eye
+        weight: 0
+      - path: akka:body/akka:r_up_hand
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
+        weight: 0
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
@@ -138,7 +270,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -616,6 +748,362 @@ ModelImporter:
         weight: 1
       - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
         weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: blink
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: akka:body
+        weight: 0
+      - path: akka:body/akka:f_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:f_tits
+        weight: 0
+      - path: akka:body/akka:hair_parent
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:female_hair_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_beard_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_hair_01
+        weight: 0
+      - path: akka:body/akka:hip
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg/akka:l_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg/akka:r_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:skirt
+        weight: 0
+      - path: akka:body/akka:l_eye
+        weight: 1
+      - path: akka:body/akka:l_up_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm/akka:l_hand
+        weight: 0
+      - path: akka:body/akka:m_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown1
+        weight: 0
+      - path: akka:body/akka:m_tits
+        weight: 0
+      - path: akka:body/akka:mouth
+        weight: 0
+      - path: akka:body/akka:pearls
+        weight: 0
+      - path: akka:body/akka:r_eye
+        weight: 1
+      - path: akka:body/akka:r_up_hand
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: eyes_open
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 32
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: akka:body
+        weight: 0
+      - path: akka:body/akka:f_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:f_tits
+        weight: 0
+      - path: akka:body/akka:hair_parent
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:female_hair_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_beard_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_hair_01
+        weight: 0
+      - path: akka:body/akka:hip
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg/akka:l_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg/akka:r_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:skirt
+        weight: 0
+      - path: akka:body/akka:l_eye
+        weight: 1
+      - path: akka:body/akka:l_up_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm/akka:l_hand
+        weight: 0
+      - path: akka:body/akka:m_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown1
+        weight: 0
+      - path: akka:body/akka:m_tits
+        weight: 0
+      - path: akka:body/akka:mouth
+        weight: 0
+      - path: akka:body/akka:pearls
+        weight: 0
+      - path: akka:body/akka:r_eye
+        weight: 1
+      - path: akka:body/akka:r_up_hand
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: talk
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: akka:body
+        weight: 0
+      - path: akka:body/akka:f_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:f_tits
+        weight: 0
+      - path: akka:body/akka:hair_parent
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:female_hair_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_beard_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_hair_01
+        weight: 0
+      - path: akka:body/akka:hip
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg/akka:l_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg/akka:r_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:skirt
+        weight: 0
+      - path: akka:body/akka:l_eye
+        weight: 0
+      - path: akka:body/akka:l_up_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm/akka:l_hand
+        weight: 0
+      - path: akka:body/akka:m_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown1
+        weight: 0
+      - path: akka:body/akka:m_tits
+        weight: 0
+      - path: akka:body/akka:mouth
+        weight: 1
+      - path: akka:body/akka:pearls
+        weight: 0
+      - path: akka:body/akka:r_eye
+        weight: 0
+      - path: akka:body/akka:r_up_hand
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: listen
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 32
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: akka:body
+        weight: 0
+      - path: akka:body/akka:f_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:f_tits
+        weight: 0
+      - path: akka:body/akka:hair_parent
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:female_hair_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_beard_01
+        weight: 0
+      - path: akka:body/akka:hair_parent/akka:male_hair_01
+        weight: 0
+      - path: akka:body/akka:hip
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:l_up_leg/akka:l_down_leg/akka:l_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg
+        weight: 0
+      - path: akka:body/akka:hip/akka:r_up_leg/akka:up_down_leg/akka:r_shoe
+        weight: 0
+      - path: akka:body/akka:hip/akka:skirt
+        weight: 0
+      - path: akka:body/akka:l_eye
+        weight: 0
+      - path: akka:body/akka:l_up_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm
+        weight: 0
+      - path: akka:body/akka:l_up_arm/akka:l_fore_arm/akka:l_hand
+        weight: 0
+      - path: akka:body/akka:m_l_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown
+        weight: 0
+      - path: akka:body/akka:m_r_eyeBrown1
+        weight: 0
+      - path: akka:body/akka:m_tits
+        weight: 0
+      - path: akka:body/akka:mouth
+        weight: 1
+      - path: akka:body/akka:pearls
+        weight: 0
+      - path: akka:body/akka:r_eye
+        weight: 0
+      - path: akka:body/akka:r_up_hand
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm
+        weight: 0
+      - path: akka:body/akka:r_up_hand/akka:r_fore_arm/akka:r_hand
+        weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
