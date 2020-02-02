@@ -99,12 +99,14 @@ public class WindowsVoice : MonoBehaviour
         // theVoice.speak("<pitch absmiddle='0'> <rate absspeed ='-5'>" + PhraseGenerator.getPhrase(PhraseGenerator.PhraseType.Agree));
     }
 
-    public void speak(string msg, float delay = 0f)
+    public void speak(string talker, string prefix, string msg, float delay = 0f)
     {
-        if (delay == 0f)
-            addToSpeechQueue(msg);
+        if (delay == 0f) {
+            GameController.ShowSubtitle(talker + ": " + msg);
+            addToSpeechQueue(prefix + msg);
+        }
         else
-            theVoice.ExecuteLater(delay, () => speak(msg));
+            theVoice.ExecuteLater(delay, () => speak(talker, prefix, msg));
     }
 
     void OnDestroy()

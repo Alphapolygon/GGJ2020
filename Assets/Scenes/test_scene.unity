@@ -470,6 +470,7 @@ MonoBehaviour:
   cameraController: {fileID: 136567663}
   leftCharacter: {fileID: 8698140373446952119}
   rightCharacter: {fileID: 5659865086695395889}
+  subtitle: {fileID: 1642454197}
   leftPlayButton: {fileID: 1460177470}
   rightPlayButton: {fileID: 125776089}
   playButton: {fileID: 1635528985}

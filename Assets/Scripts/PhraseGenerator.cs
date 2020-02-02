@@ -34,8 +34,9 @@ namespace GGJ2020
             if (lastGeneratedPhrases == null)
                 lastGeneratedPhrases = new Dictionary<string, string>();
             lastGeneratedPhrases.Clear();
-            lastGeneratedPhrases.Add("Doctor", "How does that make <emph>you</emph> feel? Who wants to continue?");
+            lastGeneratedPhrases.Add("Doctor", "How does that make you feel? Who wants to continue?");
             lastGeneratedPhrases.Add("DoctorStart", "Hello, let's start. Who wants to go first?");
+            lastGeneratedPhrases.Add("DoctorEnd", "That's all the time we have today. See you next week.");
             var details = SessionLogic.GetSessionDetails();
             List<string> tempVerbs = new List<string>();
             tempVerbs.AddRange(verbs);
@@ -48,7 +49,7 @@ namespace GGJ2020
                 string accusationF = line + string.Format("She {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verbs[Random.Range(0, verbs.Length)]);
                 lastGeneratedPhrases.Add("lineM" + i, accusationM);
                 lastGeneratedPhrases.Add("lineF" + i, accusationF);
-                lastGeneratedPhrases.Add("lineD" + i, "Honk honk, hunk. <emph>Honk</emph>! Honk?");
+                lastGeneratedPhrases.Add("lineD" + i, "Honk honk, hunk. Honk! Honk?");
             }
             foreach (var line in lastGeneratedPhrases) {
                 Debug.Log("Generated: " + line.Key + " -> " + line.Value);

@@ -28,7 +28,7 @@ namespace GGJ2020
 
             public SessionDetail()
             {
-                roundCount = Random.Range(5, 8);
+                roundCount = 5;
                 currentIndex = 0;
                 correctAnswerIndex = new List<int>();
                 type1 = (PersonType)Random.Range(0, 2);
@@ -49,7 +49,7 @@ namespace GGJ2020
 
         private string GetTypePrefix(PersonType type)
         {
-            return type == PersonType.Female ? "<pitch absmiddle='10'> <rate absspeed ='5'>" : type == PersonType.Male ? "<pitch absmiddle='-10'> <rate absspeed ='-1'>" : "<pitch absmiddle='10'> <rate absspeed ='5'>";
+            return type == PersonType.Female ? "<pitch absmiddle='10'> <rate absspeed ='5'>" : type == PersonType.Male ? "<pitch absmiddle='-10'> <rate absspeed ='-2'>" : "<pitch absmiddle='10'> <rate absspeed ='5'>";
         }
         private static SessionLogic instance = null;
 
@@ -122,9 +122,9 @@ namespace GGJ2020
         private bool internal_HandleSelection(int selection)
         {
             PersonType type = selection == 0 ? sessionDetails.type2 : sessionDetails.type1;
-            string text = GetTypePrefix(type) + PhraseGenerator.getPhrase(sessionDetails.currentIndex, type);
-            Debug.Log("HandleSelection -> type: " + type.ToString() + ", sessionIndex: " + sessionDetails.currentIndex + ", line: " + text);
-            WindowsVoice.getInstance().speak(text);
+            PersonType talkerType = selection == 0 ? sessionDetails.type1 : sessionDetails.type2;
+            string talkerName = selection == 0 ? sessionDetails.name1 : sessionDetails.name2;
+            WindowsVoice.getInstance().speak(talkerName, GetTypePrefix(talkerType), PhraseGenerator.getPhrase(sessionDetails.currentIndex, type));
             bool correct = sessionDetails.correctAnswerIndex[sessionDetails.currentIndex++] == selection;
             sessionEnded = sessionDetails.currentIndex >= sessionDetails.correctAnswerIndex.Count;
             return correct;

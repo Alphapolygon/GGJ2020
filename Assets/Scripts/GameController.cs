@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace GGJ2020
 {
@@ -13,12 +14,13 @@ namespace GGJ2020
         private CharacterControllerGGJ leftCharacter;
         [SerializeField]
         private CharacterControllerGGJ rightCharacter;
-
+        [SerializeField]
+        private TMP_Text subtitle;
         [SerializeField]
         private GameObject leftPlayButton;
         [SerializeField]
         private GameObject rightPlayButton;
-        [SerializeField] 
+        [SerializeField]
         private GameObject playButton;
         [SerializeField]
         private GameObject malePrefab;
@@ -38,7 +40,7 @@ namespace GGJ2020
 
         private const float DoctorSpeechWaitTime = 3.75f;
         private const float FemaleClientSpeechWaitTime = 1.75f;
-        private const float MaleClientSpeechWaitTime = 4.75f;
+        private const float MaleClientSpeechWaitTime = 4f;
 
         private static GameController instance = null;
 
@@ -72,23 +74,25 @@ namespace GGJ2020
                     {
                         SessionLogic.InitSession();
                         var parent = leftCharacter.transform.parent;
-                        
-                        
+
+
                         GameObject tempLeft;
                         GameObject tempRight;
                         var leftTrans = leftCharacter.transform;
                         var rightTrans = rightCharacter.transform;
-                        if (SessionLogic.GetPersonType(0) == SessionLogic.PersonType.Male) {
+                        if (SessionLogic.GetPersonType(0) == SessionLogic.PersonType.Male)
+                        {
                             tempLeft = GameObject.Instantiate(malePrefab, leftTrans.position, leftTrans.rotation, parent);
-                            tempLeft.transform.localScale = new Vector3(tempLeft.transform.localScale.x*-1, tempLeft.transform.localScale.y, tempLeft.transform.localScale.z);
+                            tempLeft.transform.localScale = new Vector3(tempLeft.transform.localScale.x * -1, tempLeft.transform.localScale.y, tempLeft.transform.localScale.z);
                         }
-                        else 
+                        else
                             tempLeft = GameObject.Instantiate(femalePrefab, leftTrans.position, leftTrans.rotation, parent);
                         if (SessionLogic.GetPersonType(1) == SessionLogic.PersonType.Male)
                             tempRight = GameObject.Instantiate(malePrefab, rightTrans.position, rightTrans.rotation, parent);
-                        else {
+                        else
+                        {
                             tempRight = GameObject.Instantiate(femalePrefab, rightTrans.position, rightTrans.rotation, parent);
-                            tempRight.transform.localScale = new Vector3(tempRight.transform.localScale.x*-1, tempRight.transform.localScale.y, tempRight.transform.localScale.z);
+                            tempRight.transform.localScale = new Vector3(tempRight.transform.localScale.x * -1, tempRight.transform.localScale.y, tempRight.transform.localScale.z);
                         }
                         Destroy(leftCharacter.gameObject);
                         Destroy(rightCharacter.gameObject);
@@ -110,7 +114,7 @@ namespace GGJ2020
                 case GameState.StartPlaySession:
                     {
                         gameState = GameState.PlaySessionStarted;
-                        WindowsVoice.getInstance().speak(SessionLogic.GetDoctorPrefix() + PhraseGenerator.getPhrase("DoctorStart"));
+                        WindowsVoice.getInstance().speak("You", SessionLogic.GetDoctorPrefix(), PhraseGenerator.getPhrase("DoctorStart"));
                         yield return new WaitForSeconds(DoctorSpeechWaitTime);
                         leftPlayButton.GetComponent<Animator>().SetTrigger("appear");
                         rightPlayButton.GetComponent<Animator>().SetTrigger("appear");
@@ -119,9 +123,12 @@ namespace GGJ2020
                     }
                 case GameState.PlaySessionEnded:
                     {
-                        playButton.SetActive(true);
+                        WindowsVoice.getInstance().speak("You", SessionLogic.GetDoctorPrefix(), PhraseGenerator.getPhrase("DoctorEnd"));
+                        yield return new WaitForSeconds(DoctorSpeechWaitTime);
                         cameraController.FadeOutCamera();
                         yield return new WaitForSeconds(1);
+                        playButton.SetActive(true);
+                        subtitle.text = "";
                         gameState = targetState;
                         break;
                     }
@@ -133,6 +140,16 @@ namespace GGJ2020
         public static void QuestionButtonClicked(int index)
         {
             instance.StartCoroutine(instance.HandleQuestionButtonClick(index));
+        }
+
+        public static void ShowSubtitle(string msg)
+        {
+            instance.internal_showSubtitle(msg);
+        }
+
+        private void internal_showSubtitle(string msg)
+        {
+            subtitle.text = msg;
         }
 
         private IEnumerator HandleQuestionButtonClick(int index)
@@ -166,7 +183,8 @@ namespace GGJ2020
             }
             else
             {
-                WindowsVoice.getInstance().speak(SessionLogic.GetDoctorPrefix() + PhraseGenerator.getPhrase("Doctor"));
+                yield return new WaitForSeconds(1);
+                WindowsVoice.getInstance().speak("You", SessionLogic.GetDoctorPrefix(), PhraseGenerator.getPhrase("Doctor"));
                 yield return new WaitForSeconds(DoctorSpeechWaitTime);
                 leftPlayButton.GetComponent<Animator>().SetTrigger("appear");
                 rightPlayButton.GetComponent<Animator>().SetTrigger("appear");
