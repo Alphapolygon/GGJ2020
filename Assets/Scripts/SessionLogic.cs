@@ -13,8 +13,8 @@ namespace GGJ2020
             Duck
         }
 
-        public static string[] MALE_NAMES = { "Raipe", "Pertsa", "George", "Vladimir", "Tauski", "Harold" };
-        public static string[] FEMALE_NAMES = { "Raija", "Tuktuk", "Johku", "Pam", "Tatjana" };
+        public static string[] MALE_NAMES = { "Cal", "Tom", "Davis", "Hank", "John", "Paul", "Ryan", "Raipe", "Pertsa", "George", "Vladimir", "Tauski", "Harold", "Donald", "Mohamed", "Kang"};
+        public static string[] FEMALE_NAMES = { "Raija", "Tuktuk", "Johku", "Pam", "Tatjana", "Sophia", "Olivia", "Ava", "Emily", "Mia", "Melanie", "Angel", "Khushi", "Zeynep", "Chizu" };
 
         public class SessionDetail
         {
