@@ -184,7 +184,7 @@ namespace GGJ2020
             else
             {
                 yield return new WaitForSeconds(1);
-                WindowsVoice.getInstance().speak("You", SessionLogic.GetDoctorPrefix(), PhraseGenerator.getPhrase("Doctor"));
+                WindowsVoice.getInstance().speak("You", SessionLogic.GetDoctorPrefix(), PhraseGenerator.getDoctorPhrase());
                 yield return new WaitForSeconds(DoctorSpeechWaitTime);
                 leftPlayButton.GetComponent<Animator>().SetTrigger("appear");
                 rightPlayButton.GetComponent<Animator>().SetTrigger("appear");

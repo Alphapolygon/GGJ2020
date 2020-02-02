@@ -34,7 +34,12 @@ namespace GGJ2020
             if (lastGeneratedPhrases == null)
                 lastGeneratedPhrases = new Dictionary<string, string>();
             lastGeneratedPhrases.Clear();
-            lastGeneratedPhrases.Add("Doctor", "How does that make you feel? Who wants to continue?");
+            lastGeneratedPhrases.Add("Doctor0", "How does that make you feel? Who wants to continue?");
+            lastGeneratedPhrases.Add("Doctor1", "How are you feeling right now? Who's next?");
+            lastGeneratedPhrases.Add("Doctor2", "What feelings does that bring up? Who wants to elaborate?");
+            lastGeneratedPhrases.Add("Doctor3", "How does that make you feel? Who wants to elaborate?");
+            lastGeneratedPhrases.Add("Doctor4", "How are you feeling right now? Who wants to continue?");
+            lastGeneratedPhrases.Add("Doctor5", "What feelings does that bring up? Who's next?");
             lastGeneratedPhrases.Add("DoctorStart", "Hello, let's start. Who wants to go first?");
             lastGeneratedPhrases.Add("DoctorEnd", "That's all the time we have today. See you next week.");
             var details = SessionLogic.GetSessionDetails();
@@ -45,8 +50,18 @@ namespace GGJ2020
                 string line = "";
                 if (i > 0)
                     line = string.Format(feelingStrings[Random.Range(0, feelingStrings.Length)], emotions[Random.Range(0, emotions.Length)]) + " ";
-                string accusationM = line + string.Format("He {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verbs[Random.Range(0, verbs.Length)]);
-                string accusationF = line + string.Format("She {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verbs[Random.Range(0, verbs.Length)]);
+                string verb1 = verbs[Random.Range(0, verbs.Length)];
+                string accusationM = null;
+                string accusationF = null;
+                if (verb1.StartsWith("is")) {
+                    int firstSpace = verb1.IndexOf(" ");
+                    accusationM = line + string.Format("He is {0}{1}", Random.Range(0, 100) > 50 ? "always" : "never", verb1.Substring(firstSpace));
+                    accusationF = line + string.Format("She is {0}{1}", Random.Range(0, 100) > 50 ? "always" : "never", verb1.Substring(firstSpace));
+                }
+                else { 
+                    accusationM = line + string.Format("He {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verb1);
+                    accusationF = line + string.Format("She {0} {1}", Random.Range(0, 100) > 50 ? "always" : "never", verb1);
+                }
                 lastGeneratedPhrases.Add("lineM" + i, accusationM);
                 lastGeneratedPhrases.Add("lineF" + i, accusationF);
                 lastGeneratedPhrases.Add("lineD" + i, "Honk honk, hunk. Honk! Honk?");
@@ -59,6 +74,11 @@ namespace GGJ2020
         public static string getPhrase(int index, SessionLogic.PersonType type)
         {
             return instance.internal_getPhrase(index, type);
+        }
+
+        public static string getDoctorPhrase()
+        {
+            return instance.internal_getPhrase("Doctor" + Random.Range(0,6));
         }
 
         public static string getPhrase(string lineId)
