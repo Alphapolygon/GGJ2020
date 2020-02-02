@@ -73,6 +73,7 @@ namespace GGJ2020
                 case GameState.Started:
                     {
                         SessionLogic.InitSession();
+                        PhraseGenerator.generatePhrases();
                         var parent = leftCharacter.transform.parent;
 
 

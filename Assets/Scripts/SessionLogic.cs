@@ -39,7 +39,6 @@ namespace GGJ2020
                 {
                     correctAnswerIndex.Add(Random.Range(0, 100) > 50 ? 0 : 1);
                 }
-                PhraseGenerator.generatePhrases();
             }
         }
 
