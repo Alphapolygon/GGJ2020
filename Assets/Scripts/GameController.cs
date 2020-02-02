@@ -37,8 +37,8 @@ namespace GGJ2020
         }
 
         private const float DoctorSpeechWaitTime = 3.75f;
-        private const float FemaleClientSpeechWaitTime = 3.75f;
-        private const float MaleClientSpeechWaitTime = 5.75f;
+        private const float FemaleClientSpeechWaitTime = 1.75f;
+        private const float MaleClientSpeechWaitTime = 4.75f;
 
         private static GameController instance = null;
 
