@@ -42,12 +42,14 @@ namespace GGJ2020
             }
         }
 
-        public static string GetDoctorPrefix() {
+        public static string GetDoctorPrefix()
+        {
             return "<pitch absmiddle='-10'>";
         }
 
-        private string GetTypePrefix(PersonType type) {
-            return type == PersonType.Female ? "<pitch absmiddle='10'> <rate absspeed ='5'>" : type == PersonType.Male ? "<pitch absmiddle='0'> <rate absspeed ='-5'>" : "<pitch absmiddle='10'> <rate absspeed ='5'>";
+        private string GetTypePrefix(PersonType type)
+        {
+            return type == PersonType.Female ? "<pitch absmiddle='10'> <rate absspeed ='5'>" : type == PersonType.Male ? "<pitch absmiddle='-10'> <rate absspeed ='-1'>" : "<pitch absmiddle='10'> <rate absspeed ='5'>";
         }
         private static SessionLogic instance = null;
 
@@ -71,22 +73,27 @@ namespace GGJ2020
             instance.internal_InitSession();
         }
 
-        public static SessionDetail GetSessionDetails() {
+        public static SessionDetail GetSessionDetails()
+        {
             return instance.internal_GetSessionDetails();
         }
 
-        private SessionDetail internal_GetSessionDetails() {
-            if (sessionEnded || sessionDetails == null) {
+        private SessionDetail internal_GetSessionDetails()
+        {
+            if (sessionEnded || sessionDetails == null)
+            {
                 internal_InitSession();
             }
             return sessionDetails;
         }
 
-        public static bool HasSessionEnded() {
+        public static bool HasSessionEnded()
+        {
             return instance.internal_HasSessionEnded();
         }
 
-        private bool internal_HasSessionEnded() {
+        private bool internal_HasSessionEnded()
+        {
             return sessionEnded;
         }
 
@@ -101,21 +108,24 @@ namespace GGJ2020
             return instance.internal_HandleSelection(selection);
         }
 
-        public static PersonType GetPersonType(int index) {
+        public static PersonType GetPersonType(int index)
+        {
             return instance.internal_GetPersonType(index);
         }
 
-        private PersonType internal_GetPersonType(int index) {
+        private PersonType internal_GetPersonType(int index)
+        {
             PersonType type = index == 0 ? sessionDetails.type1 : sessionDetails.type2;
             return type;
         }
 
-        private bool internal_HandleSelection(int selection) {
+        private bool internal_HandleSelection(int selection)
+        {
             PersonType type = selection == 0 ? sessionDetails.type2 : sessionDetails.type1;
             string text = GetTypePrefix(type) + PhraseGenerator.getPhrase(sessionDetails.currentIndex, type);
             Debug.Log("HandleSelection -> type: " + type.ToString() + ", sessionIndex: " + sessionDetails.currentIndex + ", line: " + text);
             WindowsVoice.getInstance().speak(text);
-            bool correct = sessionDetails.correctAnswerIndex[sessionDetails.currentIndex++] == selection; 
+            bool correct = sessionDetails.correctAnswerIndex[sessionDetails.currentIndex++] == selection;
             sessionEnded = sessionDetails.currentIndex >= sessionDetails.correctAnswerIndex.Count;
             return correct;
         }

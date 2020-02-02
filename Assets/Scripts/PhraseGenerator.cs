@@ -9,7 +9,7 @@ namespace GGJ2020
         private string[] emotions = { "sad", "glad", "angry", "happy" };
         private string[] adjectives = { "awful", "green", "stupid" };
         private string[] verbs = { "does dishes", "makes sweet love to me", "harrasses me", "sleeps with my friends" };
-        private string[] feelingStrings = { "Just {0}.", "I feel {0}!", "That makes me {0}!", "Hrmh. {0}" };
+        private string[] feelingStrings = { "Just {0}.", "I feel {0}!", "That makes me {0}!", "Grr. {0}" };
         private static PhraseGenerator instance = null;
 
         private Dictionary<string, string> lastGeneratedPhrases;
