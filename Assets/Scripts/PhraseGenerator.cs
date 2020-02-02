@@ -6,7 +6,7 @@ namespace GGJ2020
 {
     public class PhraseGenerator : MonoBehaviour
     {
-        private string[] emotions = { "sad", "glad", "angry", "happy", "adore","amuses","concern","fear","unease","nervously","mad","worry","joyless","envy"};
+        private string[] emotions = { "sad", "glad", "angry", "happy", "adorable","amused","concern","fear","unease","nervous","mad","worry","joyless","envious"};
         private string[] adjectives = { "awful", "green", "stupid" };
         private string[] verbs = { "does dishes", "makes sweet love to me", "harrasses me", "sleeps with my friends","talks to me","help me with my work","take care of the kids","take out the trash","does chores","smiles to me" };
         private string[] feelingStrings = { "Just {0}.", "I feel {0}!", "That makes me {0}!", "{0}.", "I sense {0}.", "I detect {0}.", "I go through.","I endure.","I bear.", "I suffer.","I perceive.","Are you serious?","Get of my back!","Don't point at me!"};
